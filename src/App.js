@@ -1,4 +1,6 @@
 import React from 'react'
+import { fetchWeather } from './API/fetchWeather'
+import './App.css'
 
 function App() {
   return (
