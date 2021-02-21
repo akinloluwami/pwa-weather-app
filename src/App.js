@@ -29,18 +29,24 @@ function App() {
             <span>{weather.name}</span>
             <sup>{weather.sys.country}</sup>
           </h2>
-          <div className="city-temp">
-            {Math.round(weather.main.temp)}
-            <sup>&deg;c</sup>
-          </div>
+          <p>{weather.weather[0].description}</p>
           <div className="info">
             <img
               src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
               alt=""
               className="city-icon"
             />
-            <p>{weather.weather[0].description}</p>
           </div>
+          <div className="city-temp">
+            {Math.round(weather.main.temp - 273.15)}
+            <sup>&deg;c</sup>
+          </div>
+          <marquee behavior="" direction="">
+            Ground Level {Math.round(weather.main.grnd_level)} | Sea Level{" "}
+            {Math.round(weather.main.sea_level)} | Humidity{" "}
+            {Math.round(weather.main.humidity)} | Pressure{" "}
+            {Math.round(weather.main.pressure)}
+          </marquee>
         </div>
       )}
     </div>
